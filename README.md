@@ -7,6 +7,7 @@ I time manged using a Tool called Toggl
 
 ## Live Demo
 [https://ramon96.github.io/fe-labela/](https://ramon96.github.io/fe-labela/)
+the first album contains all the details
 
 ## installing the project
 Clone the project
