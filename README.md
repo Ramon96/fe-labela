@@ -75,5 +75,7 @@ I think it would be overkill to fetch 50 times just to display an release year w
 - [ ] Removing from favorites (working on)
 - [ ] favorites from every view
 - [ ] Favorites page
+- [ ] Pagination to retrieve the next 50 albums
 - [ ] Adding Dotenv to the project.
 - [ ] Finishing up Todo's
+
