@@ -154,7 +154,7 @@ class detail extends Component {
                     <ul>
                         {tracks.map((track, i) =>
                             <li key={i}>
-                            <p>{track.name}</p> <p> {track.duration}s </p>
+                                <p>{track.name}</p> <p> {track.duration}s </p>
                             </li>
                         )}
                     </ul>

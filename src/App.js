@@ -14,7 +14,7 @@ import Header from './components/layout/header';
 
 // Component styling
 
-const GlobalStyles  = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
     @font-face {
         font-family: 'Open Sans';
         src: url(${OpenSans});
@@ -25,7 +25,7 @@ const GlobalStyles  = createGlobalStyle`
     body{
         margin: 0;
     }
-`
+`;
 
 const Body = styled.div`
     font-family: "Open Sans";
@@ -39,7 +39,7 @@ class App extends Component {
 
         this.state = {
             favorites: []
-        }
+        };
 
         this.favoritesHandler = this.favoritesHandler.bind(this);
 
@@ -48,7 +48,7 @@ class App extends Component {
     favoritesHandler(album){
         // if the album is not in the favorites array yet.
         if(this.state.favorites.indexOf(album) === -1){
-            console.log('add favorite')
+            console.log('add favorite');
             // add to favorites
             this.state.favorites.push(album);
         }
@@ -56,7 +56,7 @@ class App extends Component {
         else{
             // remove from favorites
 
-                this.setState({favorites: this.state.favorites.filter(item => item.name == album.name)})
+            this.setState({favorites: this.state.favorites.filter(item => item.name == album.name)});
 
             // const favoritesArr = [...this.state.favorites];
             // console.log('remove ' + album.name)
@@ -68,19 +68,19 @@ class App extends Component {
             // this.setState({favorites: favoritesArr});
         }
 
-        console.log(this.state.favorites)
+        console.log(this.state.favorites);
     }
 
 
     render(){
 
         return (
-                <Body className='App'>
+            <Body className='App'>
                 <GlobalStyles />
                 <Router basename="/">
-                <Header />
+                    <Header />
                     <Switch>
-                        <Route exact path="/" component={ () =>  <Home favoritesHandler={this.favoritesHandler} />} ></Route>
+                        <Route exact path="/" component={ () => <Home favoritesHandler={this.favoritesHandler} />} ></Route>
                         <Route path="/detail/:artist/:id" component={ Detail }></Route>
                     </Switch>
                 </Router>

@@ -30,11 +30,11 @@ class Header extends Component {
     render(){
 
         return (
-                <HeaderNav> 
-                    <Link to="/">
-                            <img src={Logo} alt="Last.fm Logo" />
-                    </Link>
-                </HeaderNav>
+            <HeaderNav>
+                <Link to="/">
+                    <img src={Logo} alt="Last.fm Logo" />
+                </Link>
+            </HeaderNav>
         );
     }
 }

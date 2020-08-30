@@ -120,8 +120,7 @@ class home extends Component {
 
         const sortedAlbums = albums.sort( (a, b) =>{
             // alphabet
-            if(sortType == "alphabet")
-            {
+            if(sortType == "alphabet") {
                 const isDesc = ( sortDirection === "asc") ? 1 : -1;
                 return isDesc * a.name.localeCompare(b.name);
             }
@@ -156,7 +155,9 @@ class home extends Component {
                                 </AlbumContainer>
                             </Link>
                             {/* TODO make this button into a component */}
-                                    <button onClick={() => {this.addFavorites(album)}}> Add to favorites </button>
+                            <button onClick={() => {
+                                this.addFavorites(album);
+                            }}> Add to favorites </button>
                         </li>
                     )}
                 </UnorderdList>
