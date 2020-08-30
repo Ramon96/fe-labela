@@ -2,6 +2,9 @@
 
 This project was created using the [Create React App](https://github.com/facebook/create-react-app) command in the command tool.
 
+# Live Demo
+[https://ramon96.github.io/fe-labela/](https://ramon96.github.io/fe-labela/)
+
 # installing the project
 
 # building the project
