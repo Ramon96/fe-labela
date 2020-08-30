@@ -13,8 +13,12 @@ the first album contains all the details
 Clone the project
 ```Git clone https://github.com/Ramon96/fe-labela.git```
 
+
 Navigate to the project using your terminal.
 ``` Cd fe-labela ``` 
+
+Install the dependencies
+``` npm install ```
 
 Run the project
 ``` npm run start ```
