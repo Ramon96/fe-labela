@@ -8,7 +8,7 @@ I time manged using a Tool called Toggl
 ## Live Demo
 [https://ramon96.github.io/fe-labela/](https://ramon96.github.io/fe-labela/)
 
-Update: live demo doesn't work in GH pages because mixed content (fetching http on https)
+Update: live demo doesn't work in GH pages because of mixed content (fetching http on https)
 
 the first album contains all the details
 
