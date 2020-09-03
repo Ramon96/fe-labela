@@ -51,6 +51,9 @@
         "key-spacing":"error",
         "indent":"error",
         "linebreak-style":["error","unix"],
-        "no-trailing-spaces":"error"
+        "no-trailing-spaces":"error",
+        "no-extra-parens": "error",
+        "eqeqeq":"error",
+        "quotes":"error"
     }
 }

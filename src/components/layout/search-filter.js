@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
 
 // Component Styling
@@ -22,6 +22,7 @@ const ButtonWrapper = styled.div`
     display: flex;
     justify-content: center;
     gap: 15px;
+
     button{
         background-color: #fb0;
         color: #222;
@@ -30,68 +31,39 @@ const ButtonWrapper = styled.div`
         padding: 10px 20px;
         font-size: 18px;
         transition: .4s;
+
         &:hover{
             background-color: #ffc900;
             cursor: pointer;
         }
+
     }
 `;
 
-
 // Component
-class SearchFilter extends Component{
 
-    constructor(props){
-        super(props);
+function SearchFilter(props){
+    const [ sortType, setSortType ] = useState("alphabet");
+    const [ sort, setSort ] = useState("asc");
 
-        this.state = {
-            sort: "asc"
-        };
-
-        this.sortDirection = this.sortDirection.bind(this);
-        this.alphabetSort = this.alphabetSort.bind(this);
-        this.playcountSort = this.playcountSort.bind(this);
+    function updateParent(){
+        props.sortHandler(sort, sortType);
     }
 
-    alphabetSort(){
-        this.props.alphabetHandler();
-    }
+    useEffect(() => {
+        updateParent();
+    }, );
 
-    playcountSort(){
-        this.props.playcountHandler();
-    }
-
-    sortDirection(){
-        switch(this.state.sort){
-        case "asc":
-            this.setState({sort: "desc"});
-            break;
-        case "desc":
-            this.setState({sort: "asc"});
-            break;
-        default:
-            this.setState({sort: "asc"});
-        }
-        this.props.sortHandler(this.state.sort);
-    }
-
-    componentDidMount(){
-        this.sortDirection();
-    }
-
-
-    render(){
-        return(
-            <SearchWrapper>
-                <input name="actor" placeholder="Seach album" type="text" onChange={ e => this.props.searchHandler(e.target.value)}/>
-                <ButtonWrapper>
-                    <button onClick={this.alphabetSort}>Sort by Alphabet </button>
-                    <button onClick={this.playcountSort}>Sort by play count </button>
-                    <button onClick={this.sortDirection}>{this.state.sort}</button>
-                </ButtonWrapper>
-            </SearchWrapper>
-        );
-    }
+    return(
+        <SearchWrapper>
+            <input name="actor" placeholder="Seach album" type="text" onChange={ e => this.props.searchHandler(e.target.value)}/>
+            <ButtonWrapper>
+                <button onClick={ () => setSortType("alphabet") }>Sort by Alphabet </button>
+                <button onClick={ () => setSortType("count")}>Sort by play count </button>
+                <button onClick={ () => sort === "asc" ? setSort("desc") : setSort("asc")}>{sort}</button>
+            </ButtonWrapper>
+        </SearchWrapper>
+    );
 }
 
 export default SearchFilter;

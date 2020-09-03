@@ -1,6 +1,4 @@
-// const url
 // TODO move this to dotenv
-// const apiKey = "4ad77daac96e29666e6e0ddbe6b2ac49";
 const apiKey = "1aaad00b79616cd27e4831f557348ef1";
 
 export async function fetchApi(artist){

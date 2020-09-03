@@ -1,22 +1,22 @@
 
 // Dependencies
-import React, { Component } from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import styled, { createGlobalStyle } from 'styled-components';
-import OpenSans from './fonts/OpenSans-Regular.ttf';
+import React, { Component } from "react";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import styled, { createGlobalStyle } from "styled-components";
+import OpenSans from "./fonts/OpenSans-Regular.ttf";
 
 // Pages
-import Home from './components/page/home';
-import Detail from './components/page/detail';
+import Home from "./components/page/home";
+import Detail from "./components/page/detail";
 
 // Layout
-import Header from './components/layout/header';
+import Header from "./components/layout/header";
 
 // Component styling
 
 const GlobalStyles = createGlobalStyle`
     @font-face {
-        font-family: 'Open Sans';
+        font-family: "Open Sans";
         src: url(${OpenSans});
         font-weight: normal;
         font-style: normal;
@@ -48,7 +48,7 @@ class App extends Component {
     favoritesHandler(album){
         // if the album is not in the favorites array yet.
         if(this.state.favorites.indexOf(album) === -1){
-            console.log('add favorite');
+            console.log("add favorite");
             // add to favorites
             this.state.favorites.push(album);
         }
@@ -56,26 +56,15 @@ class App extends Component {
         else{
             // remove from favorites
 
-            this.setState({favorites: this.state.favorites.filter(item => item.name == album.name)});
-
-            // const favoritesArr = [...this.state.favorites];
-            // console.log('remove ' + album.name)
-            // favoritesArr.filter(item => {
-            //     console.log(item.name)
-            //    return item.name == album.name
-            // });
-            // console.log(favoritesArr)
-            // this.setState({favorites: favoritesArr});
+            this.setState({favorites: this.state.favorites.filter(item => item.name === album.name)});
         }
-
-        console.log(this.state.favorites);
     }
 
 
     render(){
 
         return (
-            <Body className='App'>
+            <Body className="App">
                 <GlobalStyles />
                 <Router basename="/">
                     <Header />
