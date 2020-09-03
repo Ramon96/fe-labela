@@ -7,14 +7,21 @@ I time manged using a Tool called Toggl
 
 ## Live Demo
 [https://ramon96.github.io/fe-labela/](https://ramon96.github.io/fe-labela/)
+
+Update: live demo doesn't work in GH pages because of mixed content (fetching http on https)
+
 the first album contains all the details
 
 ## installing the project
 Clone the project
 ```Git clone https://github.com/Ramon96/fe-labela.git```
 
+
 Navigate to the project using your terminal.
 ``` Cd fe-labela ``` 
+
+Install the dependencies
+``` npm install ```
 
 Run the project
 ``` npm run start ```
